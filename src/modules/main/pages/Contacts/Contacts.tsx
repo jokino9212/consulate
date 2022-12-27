@@ -1,7 +1,8 @@
 import React from 'react'
+import { MainLayout } from 'shared'
 
 const Contacts = () => {
-	return <div>Contacts</div>
+	return <MainLayout>Contacts</MainLayout>
 }
 
 export default Contacts

@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import {
-	Main,
-	News,
+	Home,
+	Posts,
 	Faq,
 	Contacts,
 	ConsularSection,
@@ -12,14 +12,15 @@ import {
 } from './modules/main/pages'
 
 import './index.css'
+import 'assets/styles/global.sass'
 import { Page404 } from './shared'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
 	<BrowserRouter>
 		<Routes>
-			<Route path={'/'} element={<Main />} />
-			<Route path={'/news'} element={<News />} />
+			<Route path={'/'} element={<Home />} />
+			<Route path={'/posts'} element={<Posts />} />
 			<Route path={'/consular'} element={<ConsularSection />} />
 			<Route path={'/about'} element={<About />} />
 			<Route path={'/faq'} element={<Faq />} />

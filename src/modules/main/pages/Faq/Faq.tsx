@@ -1,7 +1,8 @@
 import React from 'react'
+import { MainLayout } from 'shared'
 
 const Faq = () => {
-	return <div>FAQ</div>
+	return <MainLayout>FAQ</MainLayout>
 }
 
 export default Faq

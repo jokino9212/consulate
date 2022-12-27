@@ -1,8 +1,8 @@
-import Main from './Main/Main'
+import Home from './Home/Home'
 import Faq from './Faq/Faq'
 import Contacts from './Contacts/Contacts'
 import ConsularSection from './ConsularSection/ConsularSection'
 import About from './About/About'
-import News from './News/News'
+import Posts from './Posts/Posts'
 
-export { Main, Faq, Contacts, ConsularSection, About, News }
+export { Home, Faq, Contacts, ConsularSection, About, Posts }
