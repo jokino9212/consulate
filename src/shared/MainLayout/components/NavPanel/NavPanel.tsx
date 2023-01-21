@@ -46,7 +46,7 @@ const items: MenuProps['items'] = [
 	}
 ]
 
-const App: React.FC = () => {
+const NavPanel: React.FC = () => {
 	const [current, setCurrent] = useState('')
 
 	const onClick: MenuProps['onClick'] = (e) => {
@@ -67,4 +67,4 @@ const App: React.FC = () => {
 	)
 }
 
-export default App
+export default NavPanel

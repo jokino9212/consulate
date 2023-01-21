@@ -14,6 +14,8 @@ import {
 import './index.css'
 import 'assets/styles/global.sass'
 import { Page404 } from './shared'
+import PostItemPage from './modules/main/pages/PostItemPage/PostItemPage'
+import { IPost } from './modules/main/pages/components/types/types'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
@@ -21,6 +23,7 @@ root.render(
 		<Routes>
 			<Route path={'/'} element={<Home />} />
 			<Route path={'/posts'} element={<Posts />} />
+			<Route path={'/post/:id'} element={<PostItemPage post={[]} />} />
 			<Route path={'/consular'} element={<ConsularSection />} />
 			<Route path={'/about'} element={<About />} />
 			<Route path={'/faq'} element={<Faq />} />

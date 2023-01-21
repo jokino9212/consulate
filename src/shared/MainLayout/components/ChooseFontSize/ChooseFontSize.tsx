@@ -11,6 +11,9 @@ const ChooseFontSize = () => {
 			<label>
 				<input type='radio' name='fontsSize' value='l' />l
 			</label>
+			<label>
+				<input type='radio' name='fontsSize' value='xl' />l
+			</label>
 		</div>
 	)
 }

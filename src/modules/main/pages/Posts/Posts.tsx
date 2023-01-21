@@ -1,31 +1,12 @@
 import { MainLayout } from 'shared'
 import Card, { CardVariant } from '../components/Card/Card'
-import PostList from '../components/PostList/PostList'
 import { IPost } from '../components/types/types'
-import { useEffect, useState } from 'react'
-import data from '../../../../_mocks/data.json'
-
-
-// import axios from 'axios'
-
+import postmocks from '../../../../_mocks/posts.json'
+import List from '../components/List/List'
+import PostItem from '../components/PostItem/PostItem'
 
 const Posts = () => {
-	const [posts, setPosts] = useState<IPost[]>([])
-
-
-	
-	// useEffect(() => {
-	// 	fetchPosts()
-	// }, [])
-
-	// async function fetchPosts() {
-	// 	try {
-	// 		const response = await axios.get<IPost[]>('URL!!')
-	// 		setPosts(response.data)
-	// 	} catch (e) {
-	// 		alert(e)
-	// 	}
-	// }
+	const posts: IPost[] = postmocks
 
 	return (
 		<MainLayout>
@@ -36,9 +17,12 @@ const Posts = () => {
 				height='200px'
 			>
 				<button>Кнопка</button>
-				<div>dsa</div>
+				<div>dsarff</div>
 			</Card>
-			<PostList posts={posts} />
+			<List
+				items={posts}
+				renderItem={(post: IPost) => <PostItem post={post} key={post.id} />}
+			/>
 		</MainLayout>
 	)
 }

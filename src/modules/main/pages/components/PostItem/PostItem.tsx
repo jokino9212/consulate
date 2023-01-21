@@ -8,9 +8,8 @@ interface PostItemProps {
 const PostItem: FC<PostItemProps> = ({ post }) => {
 	return (
 		<div style={{ padding: 15, border: '1px solid gray' }}>
-			{post.id}. {post.title} случилось {post.images.image1}
-			{post.images.image2} {post.author} {post.description} {post.category}
-			{post.date}
+			{post.id}. {post.name} проживает в городе {post.address.city} на улице{' '}
+			{post.address.street}
 		</div>
 	)
 }
