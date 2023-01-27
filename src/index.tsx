@@ -18,7 +18,7 @@ import { ErrorBoundary, Page404 } from './shared'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-	<BrowserRouter>
+	<BrowserRouter basename='consulate'>
 		<ErrorBoundary>
 			<Routes>
 				<Route path={'/'} element={<Home />} />
