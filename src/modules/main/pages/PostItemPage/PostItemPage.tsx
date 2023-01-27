@@ -17,7 +17,7 @@ const PostItemPage: FC = () => {
 
 	useEffect(() => {
 		fetchPost()
-	}, [])
+	}, [fetchPost])
 
 	async function fetchPost() {
 		try {

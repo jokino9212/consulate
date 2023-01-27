@@ -1,5 +1,6 @@
 {
   "name": "consulate",
+  "homepage": "https://jokino9212.github.io/consulate",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -55,6 +56,7 @@
     "eslint-plugin-n": "^15.6.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.11",
+    "gh-pages": "^5.0.0",
     "sass": "^1.57.1",
     "typescript": "^4.9.4"
   }
