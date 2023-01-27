@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/consulate/static/css/main.8ec6105a.css",
+    "main.js": "/consulate/static/js/main.b9be43ee.js",
+    "index.html": "/consulate/index.html",
+    "main.8ec6105a.css.map": "/consulate/static/css/main.8ec6105a.css.map",
+    "main.b9be43ee.js.map": "/consulate/static/js/main.b9be43ee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ec6105a.css",
+    "static/js/main.b9be43ee.js"
+  ]
+}
