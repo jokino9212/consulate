@@ -7,7 +7,7 @@ import ClockWork from '../ClockWork/ClockWork'
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer className={s.root}>
 			<div className={s.footerTop}>
 				<div className={s.left}>
 					<div className={s.logoNameBox}>

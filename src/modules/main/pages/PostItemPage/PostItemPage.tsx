@@ -1,29 +1,53 @@
-import React, { FC } from 'react'
-import { IPost } from '../components/types/types'
-import postmocks from '../../../../_mocks/posts.json'
 import { MainLayout } from 'shared'
-import PostItem from '../components/PostItem/PostItem'
-import List from '../components/List/List'
+import { useNavigate, useParams } from 'react-router-dom'
+import { FC, useEffect, useState } from 'react'
+import axios from 'axios'
+import { IPost } from '../components/types/types'
 
-interface PostItemPageProps {
-	post: IPost[]
+import s from './PostItemPage.module.sass'
+
+type PostItemPageParams = {
+	id: string
 }
 
-const PostItemPage: FC<PostItemPageProps> = () => {
-	const post: IPost[] = postmocks
+const PostItemPage: FC = () => {
+	const [post, setPost] = useState<IPost | null>(null)
+	const params = useParams<PostItemPageParams>()
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		fetchPost()
+	}, [])
+
+	async function fetchPost() {
+		try {
+			const response = await axios.get<IPost>(
+				`https://fakestoreapi.com/products/${params.id}`
+			)
+			setPost(response.data)
+		} catch (e) {
+			alert(e)
+		}
+	}
 
 	return (
 		<MainLayout>
+			<button onClick={() => navigate('/posts')}>Назад</button>
 			<div>
-				<button>Back</button>
-				<h1>Страница новости</h1>
-				<List
-					items={post}
-					renderItem={(post: IPost) => <PostItem post={post} key={post.id} />}
-				/>
+				<div className={s.root}>
+					<div className={s.titleBox}>
+						<div className={s.title}>{post?.title}</div>
+						<div>
+							📅{post?.rating.rate} | 👁{post?.rating.count} view
+						</div>
+					</div>
+					<div className={s.imgBox}>
+						<img className={s.img} src={post?.image} alt='' />
+					</div>
+					<div>{post?.description}</div>
+				</div>
 			</div>
 		</MainLayout>
 	)
 }
-
 export default PostItemPage

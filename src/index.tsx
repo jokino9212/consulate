@@ -4,7 +4,8 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import {
 	Home,
-	Posts,
+	PostsPage,
+	PostItemPage,
 	Faq,
 	Contacts,
 	ConsularSection,
@@ -13,22 +14,22 @@ import {
 
 import './index.css'
 import 'assets/styles/global.sass'
-import { Page404 } from './shared'
-import PostItemPage from './modules/main/pages/PostItemPage/PostItemPage'
-import { IPost } from './modules/main/pages/components/types/types'
+import { ErrorBoundary, Page404 } from './shared'
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
 	<BrowserRouter>
-		<Routes>
-			<Route path={'/'} element={<Home />} />
-			<Route path={'/posts'} element={<Posts />} />
-			<Route path={'/post/:id'} element={<PostItemPage post={[]} />} />
-			<Route path={'/consular'} element={<ConsularSection />} />
-			<Route path={'/about'} element={<About />} />
-			<Route path={'/faq'} element={<Faq />} />
-			<Route path={'/contacts'} element={<Contacts />} />
-			<Route path={'*'} element={<Page404 />} />
-		</Routes>
+		<ErrorBoundary>
+			<Routes>
+				<Route path={'/'} element={<Home />} />
+				<Route path={'/posts'} element={<PostsPage />} />
+				<Route path={'/posts/:id'} element={<PostItemPage />} />
+				<Route path={'/consular'} element={<ConsularSection />} />
+				<Route path={'/about'} element={<About />} />
+				<Route path={'/faq'} element={<Faq />} />
+				<Route path={'/contacts'} element={<Contacts />} />
+				<Route path={'*'} element={<Page404 />} />
+			</Routes>
+		</ErrorBoundary>
 	</BrowserRouter>
 )

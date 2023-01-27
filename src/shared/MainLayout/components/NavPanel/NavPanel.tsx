@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {
 	AppstoreOutlined,
@@ -12,6 +12,10 @@ import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
 
 import s from './NavPanel.module.sass'
+
+interface NavPAnelProps {
+	className?: string
+}
 
 const items: MenuProps['items'] = [
 	{
@@ -46,7 +50,7 @@ const items: MenuProps['items'] = [
 	}
 ]
 
-const NavPanel: React.FC = () => {
+const NavPanel: FC<NavPAnelProps> = () => {
 	const [current, setCurrent] = useState('')
 
 	const onClick: MenuProps['onClick'] = (e) => {

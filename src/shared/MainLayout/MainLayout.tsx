@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './MainLayout.module.sass'
+import s from './MainLayout.module.sass'
 import { Footer, Header, NavPanel } from './components'
 
 const MainLayout = (props: any) => {
@@ -8,7 +8,7 @@ const MainLayout = (props: any) => {
 		<div>
 			<Header />
 			<NavPanel />
-			<div>{props.children}</div>
+			<div className={s.container}>{props.children}</div>
 			<Footer />
 		</div>
 	)
