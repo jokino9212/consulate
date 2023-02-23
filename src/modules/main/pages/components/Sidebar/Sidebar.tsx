@@ -1,12 +1,7 @@
 import React from 'react'
-import {
-	UploadOutlined,
-	UserOutlined,
-	VideoCameraOutlined
-} from '@ant-design/icons'
-import { Layout, Menu, theme } from 'antd'
+
+import { Layout, Menu } from 'antd'
 import s from './Sidebar.module.sass'
-import { Link } from 'react-router-dom'
 
 const { Sider } = Layout
 
