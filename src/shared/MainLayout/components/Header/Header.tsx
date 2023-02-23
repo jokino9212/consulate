@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import s from './Header.module.sass'
 import Logo from '../Logo/Logo'
 import PhoneNumber from '../PhoneNumber/PhoneNumber'

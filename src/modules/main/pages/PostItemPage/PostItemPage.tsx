@@ -32,17 +32,19 @@ const PostItemPage: FC = () => {
 
 	return (
 		<MainLayout>
-			<button onClick={() => navigate('/posts')}>Назад</button>
+			<button className={s.return} onClick={() => navigate('/posts')}>
+				Назад
+			</button>
 			<div>
 				<div className={s.root}>
 					<div className={s.titleBox}>
 						<div className={s.title}>{post?.title}</div>
-						<div>
+						<div className={s.ratingBox}>
 							📅{post?.rating.rate} | 👁{post?.rating.count} view
 						</div>
 					</div>
 					<div className={s.imgBox}>
-						<img className={s.img} src={post?.image} alt='' />
+						<img className={s.img} src={post?.image} alt='post' />
 					</div>
 					<div>{post?.description}</div>
 				</div>

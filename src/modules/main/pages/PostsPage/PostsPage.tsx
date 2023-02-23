@@ -8,6 +8,7 @@ import PostItem from '../components/PostItem/PostItem'
 import { IPost } from '../components/types/types'
 
 import s from './PostsPage.module.sass'
+import Sidebar from '../components/Sidebar/Sidebar'
 
 const PostsPage: FC = () => {
 	const [posts, setPosts] = useState<IPost[]>([])
@@ -15,16 +16,16 @@ const PostsPage: FC = () => {
 
 	useEffect(() => {
 		setIsLoading(false)
-		fetchPosts().then((r) => {})
+		fetchPosts().then(() => {})
 		setIsLoading(true)
 	}, [])
 
-	async function fetchPosts() {
+	const fetchPosts = async () => {
 		try {
 			const response = await axios.get<IPost[]>(
-				'https://fakestoreapi.com/products'
+				'https://fakestoreapi.com/products?sort=ask'
 			)
-			setPosts(response.data)
+			return setPosts(response.data)
 		} catch (e) {
 			alert(e)
 		}
@@ -34,16 +35,22 @@ const PostsPage: FC = () => {
 		<MainLayout>
 			<div className={s.root}>
 				{isLoading ? (
-					<>
-						<h1 className={s.heading}>News</h1>
-						<List
-							className={s.list}
-							items={posts}
-							renderItem={(post: IPost) => (
-								<PostItem post={post} key={post.id} />
-							)}
-						/>
-					</>
+					<div className={s.wrap}>
+						<div className={s.navigation}>
+							<div className={s.main}></div>
+							<Sidebar />
+						</div>
+						<div className={s.content}>
+							<h1 className={s.heading}>News</h1>
+							<List
+								className={s.list}
+								items={posts}
+								renderItem={(post: IPost) => (
+									<PostItem post={post} key={post.id} />
+								)}
+							/>
+						</div>
+					</div>
 				) : (
 					<h1>Loading...</h1>
 				)}

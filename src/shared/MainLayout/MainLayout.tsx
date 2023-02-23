@@ -5,11 +5,15 @@ import { Footer, Header, NavPanel } from './components'
 
 const MainLayout = (props: any) => {
 	return (
-		<div>
-			<Header />
+		<div className={s.content}>
+			<div className={s.header}>
+				<Header />
+			</div>
 			<NavPanel />
 			<div className={s.container}>{props.children}</div>
-			<Footer />
+			<div className={s.footer}>
+				<Footer />
+			</div>
 		</div>
 	)
 }
